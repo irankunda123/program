@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>welcome to our events</h1>
+    <hr>
+    <% if(images.length > 0){ %>
+        <% images.forEach((image)=>{ %>
+            <h2><%= image.eventName %></h2>
+            <h2><%= image.picture %></h2>
+            <img src="data:<%= image.image.content_Type %>;base64, <%= image.image.data.toString('base64') %>" alt="" width="40px" height="60px">
+            <!-- <img src="http://localhost:6688/uploads/<%= image.picture %>" width="40px" height="60px" alt=""> -->
+            <% }) %>
+            <% }else{ %>
+                <p>No images uploaded</p>
+                <% } %>
+</body>
+</html>
